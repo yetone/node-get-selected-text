@@ -1,5 +1,8 @@
 {
   "name": "node-get-selected-text-darwin-x64",
+  "repository": {
+    "url": "https://github.com/yetone/node-get-selected-text"
+  },
   "version": "0.1.6",
   "os": [
     "darwin"
