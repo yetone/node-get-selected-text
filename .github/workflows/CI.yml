@@ -33,8 +33,7 @@ jobs:
             target: x86_64-pc-windows-msvc
           - host: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            docker: ghcr.io/napi-rs/napi-rs/nodejs-rust:lts-debian
-            build: apt-get install -y libxdo-dev && yarn build --target x86_64-unknown-linux-gnu
+            build: sudo apt-get install -y libxdo-dev && yarn build --target x86_64-unknown-linux-gnu
           - host: macos-latest
             target: aarch64-apple-darwin
             build: yarn build --target aarch64-apple-darwin
@@ -162,11 +161,13 @@ jobs:
         with:
           name: bindings-x86_64-unknown-linux-gnu
           path: .
+      - run: sudo apt-get install -y libxdo-dev
+        shell: bash
       - name: List packages
         run: ls -R .
         shell: bash
       - name: Test bindings
-        run: docker run --rm -v $(pwd):/build -w /build node:${{ matrix.node }}-slim yarn test
+        run: yarn test
   publish:
     name: Publish
     runs-on: ubuntu-latest
