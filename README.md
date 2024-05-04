@@ -1,6 +1,8 @@
 node-get-selected-text
 ======================
 
+[![CI](https://github.com/yetone/node-get-selected-text/actions/workflows/CI.yml/badge.svg)](https://github.com/yetone/node-get-selected-text/actions/workflows/CI.yml) [![NPM Version](https://img.shields.io/npm/v/node-get-selected-text)](https://www.npmjs.com/package/node-get-selected-text)
+
 A tiny Node.js library that allows you to easily obtain selected text across all platforms (macOS, Windows, Linux).
 
 Corresponding Rust package: [get-selected-text](https://github.com/yetone/get-selected-text)
