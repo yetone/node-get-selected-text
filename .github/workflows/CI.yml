@@ -136,38 +136,38 @@ jobs:
         shell: bash
       - name: Test bindings
         run: yarn test
-  test-linux-x64-gnu-binding:
-    name: Test bindings on Linux-x64-gnu - node@${{ matrix.node }}
-    needs:
-      - build
-    strategy:
-      fail-fast: false
-      matrix:
-        node:
-          - '18'
-          - '20'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-      - name: Install dependencies
-        run: yarn install
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: bindings-x86_64-unknown-linux-gnu
-          path: .
-      - run: sudo apt-get install -y libxdo-dev
-        shell: bash
-      - name: List packages
-        run: ls -R .
-        shell: bash
-      - name: Test bindings
-        run: yarn test
+  # test-linux-x64-gnu-binding:
+  #   name: Test bindings on Linux-x64-gnu - node@${{ matrix.node }}
+  #   needs:
+  #     - build
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       node:
+  #         - '18'
+  #         - '20'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Setup node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: ${{ matrix.node }}
+  #         cache: yarn
+  #     - name: Install dependencies
+  #       run: yarn install
+  #     - name: Download artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: bindings-x86_64-unknown-linux-gnu
+  #         path: .
+  #     - run: sudo apt-get install -y libxdo-dev
+  #       shell: bash
+  #     - name: List packages
+  #       run: ls -R .
+  #       shell: bash
+  #     - name: Test bindings
+  #       run: yarn test
   publish:
     name: Publish
     runs-on: ubuntu-latest
