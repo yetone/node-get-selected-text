@@ -1,5 +1,8 @@
 {
   "name": "node-get-selected-text",
+  "repository": {
+    "url": "https://github.com/yetone/node-get-selected-text"
+  },
   "version": "0.1.5",
   "main": "index.js",
   "types": "index.d.ts",
