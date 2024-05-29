@@ -3,7 +3,7 @@
   "repository": {
     "url": "https://github.com/yetone/node-get-selected-text"
   },
-  "version": "0.1.8",
+  "version": "0.1.9",
   "os": [
     "linux"
   ],
